@@ -1,0 +1,32 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--no-usage-statistics"
+      ]
+    }
+  },
+  "agent": {
+    "coordinator": {
+      "mode": "primary",
+      "model": "openai/gpt-6.1-sol"
+    },
+    "planner": {
+      "mode": "subagent",
+      "model": "openai/gpt-6.1-sol"
+    },
+    "implementer": {
+      "mode": "subagent",
+      "model": "deepseek/deepseek-flash"
+    },
+    "reviewer": {
+      "mode": "subagent",
+      "model": "deepseek/deepseek-flash"
+    }
+  }
+}
